@@ -1,1 +1,9 @@
-<nav></nav>
+<app-nav></app-nav>
+<div class="container text-center" style="margin-top: 100px;">
+  <router-outlet></router-outlet>
+</div>
+<ngb-toast *ngFor="let element of toastService.list; index as i" header="Notification" [autohide]="true"
+  [delay]="(i + 1) * 3000" style="position: fixed;right:2%; z-index: 15;" [style.top]="(i * 18) + 2 + '%'"
+  (hidden)="toastService.remove(element.id)">
+  {{element.value}}
+</ngb-toast>

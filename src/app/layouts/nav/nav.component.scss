@@ -1,0 +1,128 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &__button-wrapper {
+    display: block;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    text-align: center;
+    margin-right: 40px;
+    z-index: 12;
+  }
+
+  &__inner {
+    width: 30px;
+    height: 20px;
+    margin: auto;
+    position: relative;
+  }
+
+  &__bar1,
+  &__bar2,
+  &__bar3 {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    left: 0;
+    transition: all .3s;
+  }
+
+  &__bar1 {
+    top: 0;
+
+    &--active {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__bar2 {
+    top: 50%;
+
+    &--active {
+      opacity: 0;
+    }
+  }
+
+  &__bar3 {
+    top: 100%;
+
+    &--active {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__blur {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    top: 0;
+    left: 0;
+  }
+
+  &__list {
+    position: fixed;
+    width: min(400px, 75vw);
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    z-index: 11;
+    transition: all 0.3s;
+
+    &--active {
+      right: 0
+    }
+  }
+
+  &__link {
+    background-color: red;
+    box-shadow: 0 5px 0 darkred;
+    color: white;
+    padding: 1em 1.5em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: #ce0606;
+      cursor: pointer;
+    }
+
+    &:active {
+      box-shadow: none;
+      top: 5px;
+    }
+
+    &--active {
+      background-color: #3373c4;
+      box-shadow: none;
+      top: 5px;
+
+      &:hover {
+        background-color: #3373c4;
+      }
+    }
+  }
+
+}

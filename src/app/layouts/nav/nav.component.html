@@ -1,0 +1,20 @@
+<nav class="nav">
+  <button class="nav__button-wrapper" (click)="onClick()">
+    <div class="nav__inner">
+      <div class="nav__bar1" [class.nav__bar1--active]="activeNav"></div>
+      <div class="nav__bar2" [class.nav__bar2--active]="activeNav"></div>
+      <div class="nav__bar3" [class.nav__bar3--active]="activeNav"></div>
+    </div>
+  </button>
+
+  <div class="nav__blur" *ngIf="activeNav"></div>
+  <ul class="nav__list" [class.nav__list--active]="activeNav">
+    <li class="nav__item">
+      <a routerLink="/" class="nav__link" routerLinkActive="nav__link--active"
+        [routerLinkActiveOptions]="{exact: true}">Home</a>
+    </li>
+    <li class="nav__item">
+      <a routerLink="/signup" class="nav__link" routerLinkActive="nav__link--active">Sign up</a>
+    </li>
+  </ul>
+</nav>

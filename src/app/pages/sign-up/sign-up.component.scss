@@ -1,0 +1,14 @@
+.form {
+  text-align: left;
+
+  &__group {
+    display: block;
+    margin-top: 5px;
+  }
+
+  &__label {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+}
